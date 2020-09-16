@@ -16,15 +16,27 @@
 				</p>
 
 				<p class="level-item">
-					<a class="button is-danger">Delete</a>
+					<%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"}, class: "button is-danger" %>
 				</p>
 			</div>
 		</nav>
 		<hr />
+
+
 		<div class="content">
 			<%= @post.content %>
 		</div>
 	</div>
 </section>
 
-<section class="Comments"> </section>
+<section class="Section Comments">
+	<div class="container">
+		<h2 class="subtitle is-5"><strong><%= @post.comments.count %></strong> Comments</h2>
+		<%= render @post.comments %>
+		<div class = "comment-form">
+			<hr />
+			<h3 class ="subtitle is-3"> Leave a reply</h3>
+			<%= render 'comments/form' %>
+		</div>
+	</div>
+</section>

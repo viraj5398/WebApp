@@ -1,0 +1,26 @@
+<% content_for :page_title, @user.first_name %>
+
+
+<section class="section">
+	<div class="container">
+		<nav class="level">
+			<div class="level-left">
+				<p class = "level-item">
+					<strong>Actions</strong>
+				</p>
+			</div>
+
+			<div class="level-right">
+				<p class = "level-item">
+					<%= link_to "edit", edit_user_path(@user), class: "button" %>
+				</p>
+
+				<p class="level-item">
+					<%= link_to "Delete", user_path(@user), method: :delete, data: {confirm: "Are you sure?"}, class: "button is-danger" %>
+				</p>
+			</div>
+		</nav>
+		<hr />
+
+	</div>
+</section>

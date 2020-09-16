@@ -1,0 +1,23 @@
+<% content_for :page_title, "Users" %>
+
+<section class="section">
+	<div class="container">
+		<% User.all.each do |user| %>
+			<div class="card">
+				<div class="card-content">
+					<div class="media">
+						<div class="media-content">
+							<p class="title is-4"> <%= link_to user.first_name, user %></p>
+						</div>
+						<div class="body">
+							<%= user.first_name %>
+						</div>
+						<div class="body">
+							<%= user.last_name %>
+						</div>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</section>
